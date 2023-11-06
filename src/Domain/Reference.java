@@ -3,7 +3,8 @@ package Domain;
 import java.util.Objects;
 import java.util.regex.*;
 /**
- * Value Object
+ * (Value Object)
+ * Représente une référence de produit
  * */
 public class Reference {
     private final String ref;
@@ -11,6 +12,13 @@ public class Reference {
     private final String description;
     private final int prix;
 
+    /**
+     * Constructeur de référence
+     * @param ref Référence du produit
+     * @param nom Nom du produit
+     * @param description Description du produit
+     * @param prix Prix du produit
+     * */
     public Reference(String ref, String nom, String description, int prix) {
         Pattern p = Pattern.compile("[a-zA-Z0-9]{0,20}"); // 20 char max alphanumérique
         Matcher m = p.matcher(ref);
