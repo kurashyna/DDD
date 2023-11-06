@@ -57,18 +57,5 @@ public class Reference {
         return prix;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Reference reference = (Reference) o;
-        return prix == reference.prix && Objects.equals(ref, reference.ref) && Objects.equals(nom, reference.nom) && Objects.equals(description, reference.description);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(ref, nom, description, prix);
-    }
-
 
 }
