@@ -65,9 +65,10 @@ public class PanierRepositoryJSON implements IPanierRepository{
 
                 JSONObject jsonObject = new JSONObject(json);
 
-                ArrayList<LigneDeCommande> lignesDeCommande = new ArrayList<>();
                 Panier panier = new Panier(id);
+
                 JSONArray jsonLignesDeCommande = jsonObject.getJSONArray("lignesDeCommande");
+
                 jsonLignesDeCommande.forEach(ligneDeCommande -> {
                     JSONObject jsonLigneDeCommande = (JSONObject) ligneDeCommande;
                     JSONObject jsonReference = jsonLigneDeCommande.getJSONObject("reference");
