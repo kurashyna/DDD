@@ -1,21 +1,39 @@
 package Domain;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * (Aggregate)
  * Représente un panier
  * */
 public class Panier {
+
+    private final UUID id;
     private final ArrayList<LigneDeCommande> lignesDeCommande;
     private boolean isValide;
 
-    public Panier() {
+
+    public Panier(){
+        this.id = UUID.randomUUID();
+        this.lignesDeCommande = new ArrayList<>();
+    }
+
+    /**
+     * Constructeur de panier
+     * @param id Identifiant du panier
+     * */
+    public Panier(UUID id) {
+        this.id = id;
         this.lignesDeCommande = new ArrayList<>();
     }
 
     public ArrayList<LigneDeCommande> getLignesDeCommande() {
         return lignesDeCommande;
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public void getPrix(){
